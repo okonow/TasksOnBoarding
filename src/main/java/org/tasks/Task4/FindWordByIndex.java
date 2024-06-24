@@ -1,0 +1,19 @@
+package org.tasks.Task4;
+
+public class FindWordByIndex {
+    String line;
+    public String[] indexedWords;
+
+    public FindWordByIndex(String line) {
+        this.line = line;
+        indexedWords = line.split("\\h");
+    }
+
+    public String Find(int i) {
+        return indexedWords[i];
+    }
+
+
+
+
+}
