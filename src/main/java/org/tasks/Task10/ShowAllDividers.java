@@ -10,15 +10,20 @@ public class ShowAllDividers {
         this.n = n;
     }
 
-    public ArrayList<String> Dividers() {
+    public ArrayList<int[]> Dividers() {
 
-        ArrayList<String> dividers = new ArrayList<>();
+        ArrayList<int[]> dividers = new ArrayList<>();
 
-        for (int i = 2; i < n/2 ; i++) {
-            if (n % i == 0) {
-                dividers.add(i + "");
+        for (int number = m; number < n; number++) {
+            int[] a = new int[number];
+            dividers.add(a);
+            for (int divider = 2; divider < number ; divider++) {
+                if (n % divider == 0) {
+                    dividers.getLast()[divider] = divider;
+                }
             }
         }
+
 
         return dividers;
     }
