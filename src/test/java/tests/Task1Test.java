@@ -5,19 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.tasks.Task1.SquareMatrixSum;
 
 import static org.junit.Assert.assertEquals;
+import static tests.CreateSquareMatrix.createMatrix;
 
 public class Task1Test {
 
-    static int[][] createMatrix(int size) {
-        int[][] matrix = new int[size][size];
-        int elementValue = 2;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] = elementValue++;
-            }
-        }
-        return matrix;
-    }
+
 
     int[][] matrix = createMatrix(4);
 

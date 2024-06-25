@@ -8,7 +8,7 @@ public class Task6Test {
 
     @Test
     void handleTest() {
-        String line = "I love pizza, walking by my tongue!";
+        String line = "I love pizza, pizzing by my pizza!";
         FindWordByIndex test1 = new FindWordByIndex(line);
         String result = test1.Find(2);
         Assertions.assertEquals("pizza", result);

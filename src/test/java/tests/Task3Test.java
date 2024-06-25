@@ -2,11 +2,11 @@ package tests;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.tasks.Task3.SpiralMatrixSort;
-import tests.Task1Test;
+import static tests.CreateSquareMatrix.createMatrix;
 
 public class Task3Test {
 
-    int[][] matrix = Task1Test.createMatrix(7);
+    int[][] matrix = createMatrix(7);
 
     @Test
     void handleTest(){
