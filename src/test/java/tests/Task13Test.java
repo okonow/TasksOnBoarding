@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Task13Test {
     @Test
-    void handleTest(){
+    void handleTest() {
         CountOddEvenDigitsInNumber test1 = new CountOddEvenDigitsInNumber(12345);
 
         int expectedEven = 2;
@@ -23,7 +23,6 @@ public class Task13Test {
 
         Assertions.assertAll(
                 () -> Assertions.assertEquals(expectedEven, resultEven),
-                () -> Assertions.assertEquals(expectedOdd, resultOdd)
-        );
+                () -> Assertions.assertEquals(expectedOdd, resultOdd));
     }
 }

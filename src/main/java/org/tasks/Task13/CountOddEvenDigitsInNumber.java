@@ -1,7 +1,5 @@
 package org.tasks.Task13;
 
-import java.util.ArrayList;
-
 public class CountOddEvenDigitsInNumber {
 
     //ArrayList<Integer> oddDigits = new ArrayList<Integer>();
@@ -20,10 +18,10 @@ public class CountOddEvenDigitsInNumber {
 
     public CountOddEvenDigitsInNumber(int number) {
         this.number = number;
-        OddEvenDigits();
+        countOddEvenDigits();
     }
 
-    void OddEvenDigits() {
+    void countOddEvenDigits() {
 
         StringBuilder stringNumber = new StringBuilder(number + "");
         evenDigits = 0;
@@ -32,8 +30,7 @@ public class CountOddEvenDigitsInNumber {
             int currentDigit = stringNumber.charAt(charIndex) - '0';
             if (currentDigit % 2 == 0) {
                 evenDigits++;
-            }
-            else {
+            } else {
                 oddDigits++;
             }
         }

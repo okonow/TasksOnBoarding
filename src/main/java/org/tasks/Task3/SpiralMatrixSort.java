@@ -9,7 +9,7 @@ public class SpiralMatrixSort {
         this.matrix = matrix;
     }
 
-    public void Sort() {
+    public void sort() {
         //sort matrix and write it into array
         int rows = matrix.length;
         int cols = matrix[0].length;
@@ -27,6 +27,7 @@ public class SpiralMatrixSort {
 
         //pass the matrix and write into it new sorted values (saomIndexIndex - index of sorted array)
         int col = 0, row = 0, saomIndex = 0, nowCol = 0, nowRow = 0;
+
         while (saomIndex < size) {
             while (nowCol < matrix[row].length-1) {
                 matrix[nowRow][nowCol] = sortedArrayOfMatrix[saomIndex];

@@ -4,11 +4,12 @@ public class SumSeriesInFractions {
 
     int n;
     int dividend = 1;
+
     public SumSeriesInFractions(int n) {
         this.n = n;
     }
 
-    String FractionReduce(int divider) {
+    String fractionReduce(int divider) {
 
         int integer = 0, remainder = 0;
         if (divider != 0) {
@@ -26,10 +27,10 @@ public class SumSeriesInFractions {
         return frac;
     }
 
-    public double RowSum() {
+    public double rowSum() {
         double sum = 0.0;
         for (int i = 1; i < n; i++) {
-            sum += 1.0/i;
+            sum += 1.0 / i;
         }
         return sum;
     }

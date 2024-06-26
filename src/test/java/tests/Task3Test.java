@@ -6,7 +6,7 @@ import static tests.CreateSquareMatrix.createMatrix;
 
 public class Task3Test {
 
-    int[][] matrix = createMatrix(7);
+    int[][] matrix = createMatrix(7,7);
 
     @Test
     void handleTest(){

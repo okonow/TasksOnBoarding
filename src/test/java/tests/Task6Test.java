@@ -10,7 +10,7 @@ public class Task6Test {
     void handleTest() {
         String line = "I love pizza, pizzing by my pizza!";
         FindWordByIndex test1 = new FindWordByIndex(line);
-        String result = test1.Find(2);
+        String result = test1.find(2);
         Assertions.assertEquals("pizza", result);
     }
 }

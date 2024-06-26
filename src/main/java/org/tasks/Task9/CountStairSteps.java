@@ -7,15 +7,16 @@ public class CountStairSteps {
         this.cubeCount = cubeCount;
     }
 
-    public int Count() {
+    public int count() {
         int count = 0;
 
         for (int step = 0; ; step++) {
             if (cubeCount - step >= step + 1) {
                 count++;
                 cubeCount -= step;
+            } else {
+                break;
             }
-            else { break; }
         }
         return count;
     }

@@ -9,7 +9,7 @@ public class Task9Test {
     @Test
     void handleTest(){
         CountStairSteps test1 = new CountStairSteps(5);
-        int result = test1.Count();
+        int result = test1.count();
         int expected = 2;
         Assertions.assertEquals(expected, result);
     }

@@ -9,11 +9,9 @@ public class FindWordByIndex {
         indexedWords = line.split("\\h");
     }
 
-    public String Find(int i) {
+    public String find(int i) {
         return indexedWords[i];
     }
-
-
 
 
 }

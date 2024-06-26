@@ -12,19 +12,18 @@ public class FindSubstringRewriteOthers {
     }
 
 
-    void FindSubLine() {
+    void findSubLine() {
 
-         int lineLength = line.length();
-         int subLineLength = subLine.length()-1;
-         for (int symbolIndex = 0; symbolIndex < lineLength-subLineLength; symbolIndex++) {
-            String lineSubLine = line.substring(symbolIndex, symbolIndex+subLineLength);
+        int lineLength = line.length();
+        int subLineLength = subLine.length() - 1;
+        for (int symbolIndex = 0; symbolIndex < lineLength - subLineLength; symbolIndex++) {
+            String lineSubLine = line.substring(symbolIndex, symbolIndex + subLineLength);
             if (lineSubLine.equals(subLine)) {
-                line.replace(symbolIndex, symbolIndex+subLineLength, selectedWord);
+                line.replace(symbolIndex, symbolIndex + subLineLength, selectedWord);
             }
-         }
+        }
 
     }
-
 
 
 }

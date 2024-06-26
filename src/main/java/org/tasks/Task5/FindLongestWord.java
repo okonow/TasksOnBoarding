@@ -2,8 +2,6 @@ package org.tasks.Task5;
 
 import org.tasks.Task4.FindWordByIndex;
 
-import java.util.Arrays;
-
 public class FindLongestWord {
     FindWordByIndex string;
 
@@ -11,11 +9,11 @@ public class FindLongestWord {
         string = new FindWordByIndex(line);
     }
 
-    public String MaxLength() {
+    public String maxLength() {
 
         int maxIndexWords = string.indexedWords.length;
         String maxWord = string.indexedWords[0];
-        for (int wordIndex = 1; wordIndex  < maxIndexWords; wordIndex++) {
+        for (int wordIndex = 1; wordIndex < maxIndexWords; wordIndex++) {
             if (string.indexedWords[wordIndex].length() > maxWord.length()) {
                 maxWord = string.indexedWords[wordIndex];
             }
