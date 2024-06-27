@@ -10,50 +10,62 @@ public class DiagonalMatrixSort {
         this.matrix = matrix;
     }
 
-    public void sort() {
+    static void sortOneDiagonal(int[][] matrix, int colBegin,
+                                int currentDiagonal) {
+        int matrixHeight = matrix.length;
+        int elements = matrixHeight - Math.abs(matrixHeight - currentDiagonal);
+        int col = colBegin;
+        int row = 0;
 
+        int[] sortedDiagonal =
+                new int[elements - Math.abs(elements - currentDiagonal)];
+
+        for (int element = 0; element < elements; element++) {
+
+            sortedDiagonal[row] = matrix[row][col];
+            row++;
+            col++;
+        }
+
+        Arrays.sort(sortedDiagonal);
+        col = colBegin;
+        row = 0;
+        for (int element = 0; element < elements; element++) {
+
+            matrix[row][col] = sortedDiagonal[row];
+
+            row++;
+            col++;
+        }
+
+
+    }
+
+    int[][] transposeMatrix(int[][] matrix) {
         int matrixHeight = matrix.length;
         int matrixWidth = matrix[0].length;
-        int diagonalsCount = matrixHeight + matrixWidth - 1;
+        int[][] transposedMatrix = new int[matrixWidth][matrixHeight];
 
-        //мы сначала определяем кол-во диагоналей
-        //потом создаем на основе этого цикл
+        for (int i = 0; i < matrixHeight; i++) {
 
-        for (int currentDiagonal = 0; currentDiagonal < diagonalsCount; currentDiagonal++) { //choose the diagonal
-            for (int row = 0; row < currentDiagonal + 1; row++) { //step through rows
-                for (int col = 0; col < matrixWidth; col++) { //step through every col in row to find matching indexes
-                    if (Math.abs(row - col) == diagonalsCount / 2 - currentDiagonal) {
-
-                    }
-                }
+            for (int j = 0; j < matrixWidth; j++) {
+                transposedMatrix[j][i] = matrix[i][j];
             }
-
         }
+        return transposedMatrix;
+    }
 
 
-        for (int diagonalIndex = 1; diagonalIndex < matrixHeight + 1; diagonalIndex++) {
-            int[] newDiagonal = new int[diagonalIndex];
-            for (int row = 0; row < diagonalIndex; diagonalIndex++) {
-                int column = matrixWidth - row;
+    public void sort(int[][] matrix) {
+        for (int iteration = 0; iteration < 2; iteration++) {
+            int col = matrix[0].length - 1;
+            for (int diag = 1; diag <= matrix[0].length; diag++) {
+                sortOneDiagonal(matrix, col, diag);
+                col--;
             }
-
-            /*
-            for (int j = 0; j < i; j++) { //put out diagonal from matrix
-                newDiagonal[j] = matrix[i][j];
-            }
-            Arrays.sort(newDiagonal); //sort gotten diagonal
-            for (int j = 0; j < i; j++) { //put back sorted diagonal
-                matrix[i][j] = newDiagonal[j];
-            }
-
-             */
+            matrix = transposeMatrix(matrix);
         }
-
-        for (int diagonalsIndex = 0; diagonalsIndex < diagonalsCount; diagonalsIndex++) {
-            //for (int diagonalElementIndex = 0; diagonalElementIndex < )
-
-        }
-
+        //return matrix;
     }
 }
 
