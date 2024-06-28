@@ -6,19 +6,16 @@ public class SquareMatrixSum {
 
     public SquareMatrixSum(int[][] matrix) throws NonSquareMatrixException, EmptyMatrixException {
 
-            if (matrix.length != matrix[0].length) {
-                throw new NonSquareMatrixException("Matrix isn't square");
-            }
+        if (matrix == null || matrix.length == 0 || matrix[0] == null) {
+            throw new EmptyMatrixException("Matrix is empty");
+        }
+        if (matrix.length != matrix[0].length) {
+            throw new NonSquareMatrixException("Matrix isn't square");
+        }
 
-            if (matrix.length <= 0 || matrix[0].length < 0) {
-                throw new EmptyMatrixException("Matrix is empty");
-            }
-            try {
-                this.matrix = matrix;
-            } catch (ArrayIndexOutOfBoundsException e) {
 
-                throw new EmptyMatrixException("Matrix is empty");
-            }
+            this.matrix = matrix;
+
 
 
 

@@ -28,28 +28,11 @@ public class Task1Test {
     void testEmptyMatrixException() {
         int[][] emptyMatrix = new int[0][];
         EmptyMatrixException thrown = Assertions.assertThrows(EmptyMatrixException.class, () -> {
-            try {
-                SquareMatrixSum test1 = new SquareMatrixSum(emptyMatrix);
-            } catch (ArrayIndexOutOfBoundsException e) {
-                throw new EmptyMatrixException("Matrix is empty");
-            }
+            SquareMatrixSum test1 = new SquareMatrixSum(emptyMatrix);
         });
 
         Assertions.assertEquals("Matrix is empty", thrown.getMessage());
     }
-
-    @Test
-    void testEmptyMatrixException2() {
-        int[][] emptyMatrix = new int[0][];
-        ArrayIndexOutOfBoundsException thrown = Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            SquareMatrixSum test1 = new SquareMatrixSum(emptyMatrix);
-        });
-
-        Assertions.assertEquals("Index 0 out of bounds for length 0", thrown.getMessage());
-    }
-
-
-
 
 
 
