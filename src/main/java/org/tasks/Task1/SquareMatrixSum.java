@@ -4,27 +4,27 @@ public class SquareMatrixSum {
 
     int[][] matrix;
 
-    public SquareMatrixSum(int[][] matrix) {
-        try {
+    public SquareMatrixSum(int[][] matrix) throws NonSquareMatrixException, EmptyMatrixException {
+
             if (matrix.length != matrix[0].length) {
-                throw new NonSquareMatrixException("Матрица не квадратная");
+                throw new NonSquareMatrixException("Matrix isn't square");
             }
-            else {
+
+            if (matrix.length <= 0 || matrix[0].length < 0) {
+                throw new EmptyMatrixException("Matrix is empty");
+            }
+            try {
                 this.matrix = matrix;
+            } catch (ArrayIndexOutOfBoundsException e) {
+
+                throw new EmptyMatrixException("Matrix is empty");
             }
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Исключение: Матрица пустая");
-            this.matrix = new int[1][1];
-        }
-        catch (NonSquareMatrixException e) {
-            System.out.println("Исключение: " + e.getMessage());
-            this.matrix = new int[1][1];
-        }
+
+
 
     }
 
-    public int sumAllElementsBesideMainDiagonal() {
+    public int matrixSumBesideMainDiagonal() {
         int sumNotMainDiagonal = 0;
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column < matrix[row].length; column++) {
