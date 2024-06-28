@@ -1,6 +1,8 @@
 package org.tasks.Task2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class DiagonalMatrixSort {
 
@@ -41,31 +43,87 @@ public class DiagonalMatrixSort {
 
     }
 
-    int[][] transposeMatrix(int[][] matrix) {
+    void transposeMatrix(int[][] matrix) {
         int matrixHeight = matrix.length;
         int matrixWidth = matrix[0].length;
-        int[][] transposedMatrix = new int[matrixWidth][matrixHeight];
+
+        int[][] temp = new int[matrixWidth][matrixHeight];
 
         for (int i = 0; i < matrixHeight; i++) {
-
             for (int j = 0; j < matrixWidth; j++) {
-                transposedMatrix[j][i] = matrix[i][j];
+                temp[j][i] = matrix[i][j];
             }
         }
-        return transposedMatrix;
+
+
+        for (int i = 0; i < matrixWidth; i++) {
+            for (int j = 0; j < matrixHeight; j++) {
+                matrix[i][j] = temp[i][j];
+            }
+        }
     }
 
 
-    public void sort(int[][] matrix) {
+    public void sort() {
         for (int iteration = 0; iteration < 2; iteration++) {
             int col = matrix[0].length - 1;
             for (int diag = 1; diag <= matrix[0].length; diag++) {
                 sortOneDiagonal(matrix, col, diag);
                 col--;
             }
-            matrix = transposeMatrix(matrix);
+            transposeMatrix(matrix);
         }
-        //return matrix;
+    }
+
+    public void sort2()
+    {
+        int matrixHeight = matrix.length;
+        int matrixWidth = matrix[0].length;
+
+
+        int i;
+        int j;
+        for (int col = 0; col < matrixWidth; col++) {
+            i = 0;
+            j = col;
+            ArrayList < Integer > tempArray = new ArrayList < Integer > ();
+            while (i < matrixHeight && j < matrixWidth) {
+                tempArray.add(matrix[i][j]);
+                i++;
+                j++;
+            }
+            Collections.sort(tempArray);
+            i = 0;
+            j = col;
+            while (i < matrixHeight && j < matrixWidth) {
+                matrix[i][j] = tempArray.get(i);
+                i++;
+                j++;
+            }
+        }
+
+
+
+        for (int row = 0; row < matrixHeight; row++) {
+            i = row;
+            j = 0;
+            ArrayList < Integer > tempArray = new ArrayList < Integer > ();
+            while (i < matrixHeight && j < matrixWidth) {
+                tempArray.add(matrix[i][j]);
+                i++;
+                j++;
+            }
+            Collections.sort(tempArray);
+            i = row;
+            j = 0;
+            while (i < matrixHeight && j < matrixWidth) {
+                matrix[i][j] = tempArray.get(j);
+                i++;
+                j++;
+            }
+        }
+
+
     }
 }
 
