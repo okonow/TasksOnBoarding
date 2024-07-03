@@ -1,52 +1,108 @@
-package org.tasks.Task3;
+package org.tasks.task3;
+
+import org.tasks.exceptions.EmptyArrayException;
+import org.tasks.exceptions.EmptyMatrixException;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import static org.tasks.other.QuickSort.quickSort;
 
 public class SpiralMatrixSort {
 
-    public int[][] matrix;
+    private int[][] matrix;
 
-    public SpiralMatrixSort(int[][] matrix) {
+    public int[][] getMatrix() {
+        return matrix;
+    }
+
+    public SpiralMatrixSort(int[][] matrix) throws EmptyMatrixException {
+        if (matrix == null || matrix.length == 0 || matrix[0] == null) {
+            throw new EmptyMatrixException("Matrix is empty");
+        }
         this.matrix = matrix;
     }
 
-    public void sort() {
-        //sort matrix and write it into array
-        int rows = matrix.length;
-        int cols = matrix[0].length;
-        int size = rows*cols;
-        int[] sortedArrayOfMatrix = new int[size];
+
+    public void sort() throws EmptyArrayException {
+        //write matrix into array, sort it,
+        // and write sorted array in matrix by spiral
+
+        int matrixHeight = matrix.length;
+        int matrixWidth = matrix[0].length;
+        int size = matrixHeight * matrixWidth;
+
+        ArrayList<Integer> sortedArrayOfMatrix = new ArrayList<>(size);
         int index = 0;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                sortedArrayOfMatrix[index++] = matrix[i][j];
+        for (int i = 0; i < matrixHeight; i++) {
+            for (int j = 0; j < matrixWidth; j++) {
+                sortedArrayOfMatrix.add(matrix[i][j]);
             }
-
         }
 
-        Arrays.sort(sortedArrayOfMatrix);
+        quickSort(sortedArrayOfMatrix, 0, sortedArrayOfMatrix.size() - 1);
+        move(sortedArrayOfMatrix);
+    }
 
-        //pass the matrix and write into it new sorted values (saomIndexIndex - index of sorted array)
-        int col = 0, row = 0, saomIndex = 0, nowCol = 0, nowRow = 0;
+    void move(ArrayList<Integer> sortedValues) {
+        //write by spiral
+        int currentI = 0, currentJ = 0;
+        int currentWidth = matrix[0].length, currentHeight = matrix.length;
+        int elements = currentHeight * currentWidth;
+        int dir = 0, currentIndex = 0;
+        int currentMinI = 0, currentMinJ = 0;
 
-        while (saomIndex < size) {
-            while (nowCol < matrix[row].length-1) {
-                matrix[nowRow][nowCol] = sortedArrayOfMatrix[saomIndex];
-                saomIndex++; nowCol++;
+        while (currentIndex < elements) {
+            switch (dir) {
+                case 0: // right
+                    for (; currentJ < currentWidth; currentJ++) {
+                        matrix[currentI][currentJ] = sortedValues.get(currentIndex++);
+                    }
+                    currentI++;
+                    currentJ--;
+                    currentWidth--;
+                    dir = 1;
+                    break;
+                case 1: // down
+                    for (; currentI < currentHeight; currentI++) {
+                        matrix[currentI][currentJ] = sortedValues.get(currentIndex++);
+                    }
+                    currentI--;
+                    currentJ--;
+                    currentHeight--;
+                    dir = 2;
+                    break;
+                case 2: // left
+                    for (; currentJ >= currentMinJ; currentJ--) {
+                        matrix[currentI][currentJ] = sortedValues.get(currentIndex++);
+                    }
+                    currentI--;
+                    currentJ++;
+                    dir = 3;
+                    break;
+                case 3: // up
+                    for (; currentI > currentMinI; currentI--) {
+                        matrix[currentI][currentJ] = sortedValues.get(currentIndex++);
+                    }
+                    currentI++;
+                    currentJ++;
+                    currentMinI++;
+                    currentMinJ++;
+                    dir = 0;
+                    break;
             }
-            while (nowRow < matrix[row].length-1) {
-                matrix[nowRow][nowCol] = sortedArrayOfMatrix[saomIndex];
-                saomIndex++; nowRow++;
-            }
-            while (nowCol > col) {
-                matrix[nowRow][nowCol] = sortedArrayOfMatrix[saomIndex];
-                saomIndex++; nowCol--;
-            }
-            while (nowRow > row) {
-                matrix[nowRow][nowCol] = sortedArrayOfMatrix[saomIndex];
-                saomIndex++; nowRow--;
-            }
-            col++;
-            row++;
         }
+    }
+
+    public String showMatrix() {
+        String stringMatrix = "";
+        for (int i = 0; i < matrix.length; i++) {
+
+            for (int j = 0; j < matrix[0].length; j++) {
+                stringMatrix += matrix[i][j] + ", ";
+            }
+            stringMatrix += "\n";
+        }
+        return stringMatrix;
     }
 }
