@@ -1,4 +1,4 @@
-package org.tasks.Task11;
+package org.tasks.task11;
 
 public class CountDigitsInNumber<T> {
     T number;

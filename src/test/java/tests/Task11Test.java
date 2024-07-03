@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task11.CountDigitsInNumber;
+import org.tasks.task11.CountDigitsInNumber;
 
 public class Task11Test {
     @Test

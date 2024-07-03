@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task8.SumSeriesInFractions;
+import org.tasks.task8.SumSeriesInFractions;
 
 public class Task8Test {
     @Test

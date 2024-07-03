@@ -1,4 +1,4 @@
-package org.tasks.Task13;
+package org.tasks.task13;
 
 public class CountOddEvenDigitsInNumber {
 

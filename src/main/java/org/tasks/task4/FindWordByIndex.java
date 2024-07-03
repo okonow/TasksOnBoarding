@@ -1,4 +1,4 @@
-package org.tasks.Task4;
+package org.tasks.task4;
 
 public class FindWordByIndex {
     String line;

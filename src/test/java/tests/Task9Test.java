@@ -2,8 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task3.SpiralMatrixSort;
-import org.tasks.Task9.CountStairSteps;
+import org.tasks.task9.CountStairSteps;
 
 public class Task9Test {
     @Test

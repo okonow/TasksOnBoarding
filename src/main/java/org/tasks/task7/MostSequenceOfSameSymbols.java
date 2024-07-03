@@ -1,4 +1,4 @@
-package org.tasks.Task7;
+package org.tasks.task7;
 
 public class MostSequenceOfSameSymbols {
     String line;

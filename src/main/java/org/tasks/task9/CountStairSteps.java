@@ -1,4 +1,4 @@
-package org.tasks.Task9;
+package org.tasks.task9;
 
 public class CountStairSteps {
     int cubeCount;

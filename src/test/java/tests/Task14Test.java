@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task14.DisplayFibonacciNumbersSeries;
+import org.tasks.task14.DisplayFibonacciNumbersSeries;
 
 import java.util.ArrayList;
 import java.util.Arrays;

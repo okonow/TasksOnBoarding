@@ -2,11 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task13.CountOddEvenDigitsInNumber;
-import org.tasks.Task3.SpiralMatrixSort;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.tasks.task13.CountOddEvenDigitsInNumber;
 
 import static org.junit.Assert.assertEquals;
 

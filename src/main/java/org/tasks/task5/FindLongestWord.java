@@ -1,6 +1,6 @@
-package org.tasks.Task5;
+package org.tasks.task5;
 
-import org.tasks.Task4.FindWordByIndex;
+import org.tasks.task4.FindWordByIndex;
 
 public class FindLongestWord {
     FindWordByIndex string;

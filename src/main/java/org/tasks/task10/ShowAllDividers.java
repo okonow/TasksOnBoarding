@@ -1,4 +1,4 @@
-package org.tasks.Task10;
+package org.tasks.task10;
 
 import java.util.ArrayList;
 

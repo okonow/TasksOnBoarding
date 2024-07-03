@@ -2,9 +2,9 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task1.EmptyMatrixException;
-import org.tasks.Task1.NonSquareMatrixException;
-import org.tasks.Task1.SquareMatrixSum;
+import org.tasks.exceptions.EmptyMatrixException;
+import org.tasks.exceptions.NonSquareMatrixException;
+import org.tasks.task1.SquareMatrixSum;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,4 +1,4 @@
-package org.tasks.Task12;
+package org.tasks.task12;
 
 
 public class ProductAndSumOfNumberDigits<T> {

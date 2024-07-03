@@ -1,4 +1,4 @@
-package org.tasks.Task8;
+package org.tasks.task8;
 
 public class SumSeriesInFractions {
 

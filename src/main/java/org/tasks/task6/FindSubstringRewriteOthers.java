@@ -1,4 +1,4 @@
-package org.tasks.Task6;
+package org.tasks.task6;
 
 public class FindSubstringRewriteOthers {
     StringBuilder line;

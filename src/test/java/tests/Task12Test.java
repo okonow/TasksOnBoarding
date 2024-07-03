@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task12.ProductAndSumOfNumberDigits;
+import org.tasks.task12.ProductAndSumOfNumberDigits;
 
 public class Task12Test {
     @Test

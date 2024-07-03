@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task5.FindLongestWord;
+import org.tasks.task5.FindLongestWord;
 
 public class Task5Test {
 

@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task7.MostSequenceOfSameSymbols;
+import org.tasks.task7.MostSequenceOfSameSymbols;
 
 public class Task7Test {
     @Test

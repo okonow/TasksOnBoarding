@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task4.FindWordByIndex;
+import org.tasks.task4.FindWordByIndex;
 
 public class Task6Test {
 

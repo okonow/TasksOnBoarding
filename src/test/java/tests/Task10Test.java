@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.tasks.Task10.ShowAllDividers;
+import org.tasks.task10.ShowAllDividers;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,7 @@
-package org.tasks.Task1;
+package org.tasks.task1;
+
+import org.tasks.exceptions.EmptyMatrixException;
+import org.tasks.exceptions.NonSquareMatrixException;
 
 public class SquareMatrixSum {
 
