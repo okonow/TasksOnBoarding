@@ -4,7 +4,6 @@ import org.tasks.exceptions.EmptyArrayException;
 import org.tasks.exceptions.EmptyMatrixException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.tasks.other.QuickSort.quickSort;
 
@@ -33,7 +32,6 @@ public class SpiralMatrixSort {
         int size = matrixHeight * matrixWidth;
 
         ArrayList<Integer> sortedArrayOfMatrix = new ArrayList<>(size);
-        int index = 0;
         for (int i = 0; i < matrixHeight; i++) {
             for (int j = 0; j < matrixWidth; j++) {
                 sortedArrayOfMatrix.add(matrix[i][j]);
@@ -47,7 +45,9 @@ public class SpiralMatrixSort {
     void move(ArrayList<Integer> sortedValues) {
         //write by spiral
         int currentI = 0, currentJ = 0;
-        int currentWidth = matrix[0].length, currentHeight = matrix.length;
+        int
+            currentWidth = matrix[0].length,
+            currentHeight = matrix.length;
         int elements = currentHeight * currentWidth;
         int dir = 0, currentIndex = 0;
         int currentMinI = 0, currentMinJ = 0;
