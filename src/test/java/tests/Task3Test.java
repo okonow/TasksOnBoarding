@@ -17,7 +17,6 @@ public class Task3Test {
         test1.sort();
         int[][] result = test1.getMatrix();
         int[][] expected = {{0, 1}, {7, 2}, {6, 3}, {5, 4}};
-        SpiralMatrixSort test2 = new SpiralMatrixSort(expected);
         Assertions.assertArrayEquals(expected, result);
     }
 
@@ -37,8 +36,6 @@ public class Task3Test {
         test1.sort();
         int [][] result = test1.getMatrix();
         int[][] expected = {{-12, -11, -10, -9}, {-3, -2, -1, -8}, {-4, -5, -6, -7}};
-        SpiralMatrixSort test2 = new SpiralMatrixSort(expected);
-
         Assertions.assertArrayEquals(expected, result);
     }
 
@@ -49,8 +46,6 @@ public class Task3Test {
         test1.sort();
         int [][] result = test1.getMatrix();
         int[][] expected = {{0,1,2,3,4}, {15,16,17,18,5}, {14,23,24,19,6}, {13,22,21,20,7}, {12,11,10,9,8}};
-        SpiralMatrixSort test2 = new SpiralMatrixSort(expected);
-
         Assertions.assertArrayEquals(expected, result);
     }
 }

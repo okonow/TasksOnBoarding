@@ -44,14 +44,13 @@ public class SpiralMatrixSort {
 
     void move(ArrayList<Integer> sortedValues) {
         //write by spiral
-        int currentI = 0, currentJ = 0;
-        int
-            currentWidth = matrix[0].length,
-            currentHeight = matrix.length;
+        int currentI = 0;
+        int currentJ = 0;
+        int currentWidth = matrix[0].length;
+        int currentHeight = matrix.length;
         int elements = currentHeight * currentWidth;
         int dir = 0, currentIndex = 0;
         int currentMinI = 0, currentMinJ = 0;
-
         while (currentIndex < elements) {
             switch (dir) {
                 case 0: // right
@@ -92,17 +91,5 @@ public class SpiralMatrixSort {
                     break;
             }
         }
-    }
-
-    public String showMatrix() {
-        String stringMatrix = "";
-        for (int i = 0; i < matrix.length; i++) {
-
-            for (int j = 0; j < matrix[0].length; j++) {
-                stringMatrix += matrix[i][j] + ", ";
-            }
-            stringMatrix += "\n";
-        }
-        return stringMatrix;
     }
 }
