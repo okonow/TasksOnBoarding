@@ -49,8 +49,10 @@ public class SpiralMatrixSort {
         int currentWidth = matrix[0].length;
         int currentHeight = matrix.length;
         int elements = currentHeight * currentWidth;
-        int dir = 0, currentIndex = 0;
-        int currentMinI = 0, currentMinJ = 0;
+        int dir = 0;
+        int currentIndex = 0;
+        int currentMinI = 0;
+        int currentMinJ = 0;
         while (currentIndex < elements) {
             switch (dir) {
                 case 0: // right
